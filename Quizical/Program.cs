@@ -1,8 +1,12 @@
 ﻿using System;
-class Program
-{
-    static void Main(string[] args)
-    {
 
+namespace Quizical
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
     }
 }
