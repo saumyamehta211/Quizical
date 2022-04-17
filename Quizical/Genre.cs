@@ -9,12 +9,10 @@
 
         public int Answer { get { return answer; } set { answer = value;} }
 
-
         public Genre(string question, int answer)
         {
             Question = question;
             Answer = answer;
         }
-
     }
 }

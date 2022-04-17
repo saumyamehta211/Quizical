@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Quizical
 {
-    // GenreMath class implements Adapter model
+    // GenreMath class implements Adapter Pattern
     internal class GenreMath : GenreInterface
     {
         // represents the genre collection containing the question and answer.
         // Question number is set in this class.
         public Dictionary<int, Genre> questionBank = new Dictionary<int, Genre>();
-
 
         public GenreMath()
         {
@@ -27,16 +26,27 @@ namespace Quizical
         public List<int> getAnswers()
         {           
             List<int> answers = new List<int>();
-            foreach (var question in questionBank.Values)
+            foreach (Genre question in questionBank.Values)
             {
-                answers = questionBank.Values.answers;
+                answers.Add(question.Answer);
             }
             return answers;
         }
 
-        public void getQuestions()
+        public List<string> getQuestions()
         {
-            throw new NotImplementedException();
+            List<string> Questions = new List<string>();
+            foreach (Genre question in questionBank.Values)
+            {
+                Questions.Add(question.Question);
+            }
+            return Questions;
+        }
+
+        // Returns dictionary with all the specific genre details and  
+        public Dictionary<int,Genre> getQuestionDetails()
+        {
+            return questionBank;
         }
     }
 }
