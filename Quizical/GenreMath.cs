@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quizical
 {
+    // GenreMath class implements Adapter model
     internal class GenreMath : GenreInterface
     {
         // represents the genre collection containing the question and answer.
