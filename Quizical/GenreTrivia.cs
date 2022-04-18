@@ -12,7 +12,6 @@ namespace Quizical
 
         public Dictionary<int, Genre> questionBank = new Dictionary<int, Genre>();
 
-
         public GenreTrivia()
         {
             GenreTrivia gT = (GenreTrivia)gB.Clone();
