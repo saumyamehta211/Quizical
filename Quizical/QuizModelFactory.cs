@@ -22,6 +22,7 @@ namespace Quizical
             return quizModelFactory;
         }
 
+        //return the quiz model
         internal IQuizModel GetQuizModel(string quizModel)
         {
             if (!quizModelDictionary.ContainsKey(quizModel))
@@ -65,6 +66,7 @@ namespace Quizical
                 }
             }
 
+            //method to generate random questions
             public MyStack<Dictionary<int, Genre>> generateRandomQuestions()
             {
                 if (this.gb1 != null)
@@ -90,6 +92,7 @@ namespace Quizical
                 }
             }
 
+            //method to check for answers
             public void checkAnswer(int id,int answer)
             {
                 if (this.gb1 != null)
@@ -101,7 +104,7 @@ namespace Quizical
                     }
                 }
             }
-
+            //method to display score
             public void displayScore()
             {
                 Console.WriteLine("Your score is : "+score);
