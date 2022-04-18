@@ -32,7 +32,7 @@ namespace Quizical
             return quizModelDictionary[quizModel];
         }
 
-        //Private Flyweight model class
+    //Private Flyweight model class
         private class QuizModel : IQuizModel
         {
             private int score;
@@ -42,7 +42,7 @@ namespace Quizical
             private List<int> list = new List<int>();
             private Dictionary<int,Genre> questionBank = new Dictionary<int,Genre>();
 
-            //Model constructor
+    //Model constructor
             public QuizModel(string quizModel)
             {
                 score = 0;
