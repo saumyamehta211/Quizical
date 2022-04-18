@@ -12,10 +12,9 @@ namespace Quizical
 
         public Dictionary<int, Genre> questionBank = new Dictionary<int, Genre>();
 
-
         public GenreTrivia()
         {
-            GenreTrivia gT = (GenreTrivia)gB.Clone();
+            GenreBiology gT = (GenreBiology)gB.Clone();
             gT.questionBank.Add(1, new Genre("Question : Who was elected President of the United States in 2017?",1));
             gT.questionBank.Add(2, new Genre("Question : When did Jonas Brothers make their comeback to the music world?", 3));
             gT.questionBank.Add(3, new Genre("Question : What is the national language of Canada?", 2));
