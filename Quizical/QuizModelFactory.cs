@@ -9,6 +9,7 @@ namespace Quizical
 
         private static QuizModelFactory? quizModelFactory;
         private Dictionary<string,QuizModel> quizModelDictionary = new Dictionary<string, QuizModel>();
+        
 
         private QuizModelFactory() { }
 
@@ -35,6 +36,10 @@ namespace Quizical
         {
             private int score;
             private GenreInterface? gb1 = null;
+            private MyStack<Dictionary<int, Genre>>? stack;
+            private int questionLength = 3;
+            private List<int> list = new List<int>();
+            private Dictionary<int,Genre> questionBank = new Dictionary<int,Genre>();
 
             //Model constructor
             public QuizModel(string quizModel)
@@ -57,6 +62,31 @@ namespace Quizical
                 else
                 {
                     this.gb1 = new GenreTrivia();
+                }
+            }
+
+            public MyStack<Dictionary<int, Genre>> generateRandomQuestions()
+            {
+                if (this.gb1 != null)
+                {
+                    var questionDetails = this.gb1.getQuestionDetails();
+                    for (var i = 0; i <= questionLength; i++)
+                    {
+                        Random rand = new Random();
+                        int randnum = rand.Next(1, 5);
+                        if (!list.Contains(randnum))
+                        {
+                            questionBank.Add(randnum,questionBank[randnum]);
+                            stack.Push(questionBank);
+                            list.Add(randnum);
+                        }
+                        
+                    }
+                    return stack;
+                }
+                else
+                {
+                    return null;
                 }
             }
 
