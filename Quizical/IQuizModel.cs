@@ -4,6 +4,7 @@
     internal interface IQuizModel
     {
         public void displayScore();
-        public void checkAnswer();
+        public void checkAnswer(int id, int answer);
+        public MyStack<Dictionary<int, Genre>> generateRandomQuestions();
     }
 }
