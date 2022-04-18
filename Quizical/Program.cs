@@ -42,7 +42,26 @@ namespace Quizical
 
             QuizModelFactory modelFactory = QuizModelFactory.GetInstance();
 
+            var QuizModel = modelFactory.GetQuizModel(playerSelectedCategory);
 
+            var QuestionStack = QuizModel.generateRandomQuestions();
+            
+            foreach(var question in QuestionStack.FirstOrDefault())
+            {
+                Console.WriteLine(question.Value.Question);
+                
+                Console.WriteLine("Please select the option number!!");
+
+                int answer = Convert.ToInt32(Console.ReadLine());
+                QuizModel.checkAnswer(question.Key, answer);      
+            }
+
+            Console.WriteLine("-----------------------------------------------------------------------------------");
+            Console.WriteLine("Now calculation score:");
+            Thread.Sleep(2000);
+            QuizModel.displayScore();
+            Console.WriteLine("------------------------------------------------------------------------------------");
+            Console.WriteLine("thanks for playing!!!");
 
         }
     }

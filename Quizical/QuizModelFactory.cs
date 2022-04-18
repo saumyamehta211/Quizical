@@ -36,7 +36,7 @@ namespace Quizical
         {
             private int score;
             private GenreInterface? gb1 = null;
-            private MyStack<Dictionary<int, Genre>>? stack;
+            private MyStack<Dictionary<int, Genre>>? stack = new MyStack<Dictionary<int, Genre>>();
             private int questionLength = 3;
             private List<int> list = new List<int>();
             private Dictionary<int,Genre> questionBank = new Dictionary<int,Genre>();
@@ -76,7 +76,7 @@ namespace Quizical
                         int randnum = rand.Next(1, 5);
                         if (!list.Contains(randnum))
                         {
-                            questionBank.Add(randnum,questionBank[randnum]);
+                            questionBank.Add(randnum, questionDetails[randnum]);
                             stack.Push(questionBank);
                             list.Add(randnum);
                         }
