@@ -4,6 +4,6 @@
     internal interface IQuizModel
     {
         public void displayScore();
-        public void checkAnswer();
+        public void checkAnswer(int id, int answer);
     }
 }
